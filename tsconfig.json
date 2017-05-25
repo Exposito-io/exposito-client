@@ -15,7 +15,8 @@
             "*": ["*"]
         },
         "typeRoots": [
-        ]
+        ],
+        "types": [ "node", "mocha", "chai" ]
     },
     "include": [
         "index.ts"

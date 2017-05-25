@@ -8,7 +8,7 @@
     "npm": "3.x"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha -r ts-node/register test/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -17,11 +17,19 @@
   "author": "Mathew Cormier",
   "license": "MIT",
   "devDependencies": {
+    "@types/chai": "^3.5.2",
+    "@types/mocha": "^2.2.41",
     "@types/node": "^7.0.22",
+    "@types/sinon": "^2.2.2",
+    "chai": "^3.5.0",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.1",
+    "ts-node": "^3.0.4",
     "tslint": "3.15.1",
     "typescript": "^2.3.3"
   },
   "dependencies": {
+    "config": "^1.26.1",
     "fetch-on-rest": "^2.0.4"
   }
 }
