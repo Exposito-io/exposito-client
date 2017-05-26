@@ -2,12 +2,13 @@
   "name": "exposito-client",
   "version": "0.0.1",
   "description": "NodeJS client for Exposito API",
-  "main": "index.js",
+  "main": "build/node/index.js",
   "engines": {
     "node": "6.x",
     "npm": "3.x"
   },
   "scripts": {
+    "build": "./node_modules/.bin/tsc",
     "test": "./node_modules/.bin/mocha -r ts-node/register test/**/*.spec.ts"
   },
   "repository": {
@@ -29,8 +30,7 @@
     "tslint": "3.15.1",
     "typescript": "^2.3.3"
   },
-  "dependencies": {    
-    "config": "^1.26.1",
+  "dependencies": {
     "fetch-on-rest": "^2.0.4",
     "isomorphic-fetch": "^2.2.1"
   }

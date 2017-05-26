@@ -1,5 +1,6 @@
 import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
+import config from '../config'
 
 
 

@@ -1,14 +1,14 @@
 import 'isomorphic-fetch'
 import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
-import * as config from 'config'
+import config from '../config'
 
 
 export class Wallets {
 
     constructor(opts: ExpositoClientOptions = {}) {
-        this.version = opts.version || config.get('version')
-        this.url = opts.url || config.get('url')
+        this.version = opts.version || config.version
+        this.url = opts.url || config.url
         this.api = Rest(`${this.url}/${this.version}`)
     }
 

@@ -16,7 +16,7 @@
         },
         "typeRoots": [
         ],
-        "types": [ "mocha", "chai" ]
+        "types": [ "node", "mocha", "chai" ]
     },
     "include": [
         "index.ts"
