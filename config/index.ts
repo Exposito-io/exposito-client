@@ -1,5 +1,7 @@
-import Config from './default'
+import { Config } from './default'
 
 let env = process.env.NODE_ENV || 'default'
+let ConfigImpl = require(`./${env}`)
 
-export default require(`./${env}`) as Config
+
+export default new ConfigImpl.Config() as Config

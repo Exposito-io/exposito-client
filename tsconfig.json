@@ -19,7 +19,8 @@
         "types": [ "node", "mocha", "chai" ]
     },
     "include": [
-        "index.ts"
+        "index.ts",
+        "config/*.ts"
     ],
     "exclude": [
         "node_modules"

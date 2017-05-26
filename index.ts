@@ -5,6 +5,7 @@ import { Wallets } from './lib/wallets'
 import { PeriodicPayments } from './lib/periodic-payments'
 
 
+
 export class ExpositoClient {
 
     constructor(opts: ExpositoClientOptions = {}) {
@@ -28,4 +29,7 @@ export class ExpositoClient {
     protected url: string
 
 }
+
+
+
 
