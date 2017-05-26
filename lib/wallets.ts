@@ -54,7 +54,7 @@ export class Wallets {
     }
 
 
-    async send(opts) {
+    async send(opts: WalletSendOptions) {
          try {
              // TODO
             let result = await this.api.post(`wallets/${opts.sourceWalletId}/send`, { 
@@ -75,4 +75,12 @@ export class Wallets {
     protected version: string
     protected url: string
     protected api
+}
+
+
+
+export class WalletSendOptions {
+    sourceWalletId: string
+    destinationWalletId: string
+    amount: number
 }
