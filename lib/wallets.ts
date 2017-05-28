@@ -12,10 +12,23 @@ export class Wallets {
         this.api = Rest(`${this.url}/${this.version}`)
     }
 
-    
+
     async createWallet(): Promise<string> {
         try {
             let result = await this.api.post(`wallets`)
+            if (result.error) {
+                throw('Error')
+            }
+            else
+                return result
+        } catch (e) {
+            throw(e)
+        }
+    }
+
+    async getWallet(id: string) {
+         try {
+            let result = await this.api.get(`wallets/${id}`)
             if (result.error) {
                 throw('Error')
             }
@@ -36,7 +49,7 @@ export class Wallets {
                 return result
         } catch(e) {
             throw(e)
-        }      
+        }
     }
 
 

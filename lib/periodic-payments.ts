@@ -7,9 +7,36 @@ import config from '../config'
 export class PeriodicPayments {
 
     constructor(opts: ExpositoClientOptions = {}) {
-        this.version = opts.version || 'v1'
-        this.url = opts.url || 'https://api.exposito.io'
+        this.version = opts.version || config.version
+        this.url = opts.url || config.url
         this.api = Rest(`${this.url}/${this.version}`)
+    }
+
+    /*
+    async createPeriodicPayment(): Promise<string> {
+        try {
+            let result = await this.api.post(`wallets`)
+            if (result.error) {
+                throw('Error')
+            }
+            else
+                return result
+        } catch(e) {
+            throw(e)
+        }
+    }*/
+
+    async getPeriodicPayment(id: string) {
+         try {
+            let result = await this.api.get(`periodic-payments/${id}`)
+            if (result.error) {
+                throw('Error')
+            }
+            else
+                return result
+        } catch(e) {
+            throw(e)
+        }
     }
 
 
