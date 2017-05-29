@@ -2,6 +2,9 @@ import 'isomorphic-fetch'
 import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
 import config from '../config'
+import { SendOptions, GetWalletOptions } from 'models'
+
+
 
 
 export class Wallets {
@@ -26,9 +29,9 @@ export class Wallets {
         }
     }
 
-    async getWallet(id: string) {
+    async getWallet(opts: GetWalletOptions) {
          try {
-            let result = await this.api.get(`wallets/${id}`)
+            let result = await this.api.get(`wallets/${opts.walletId}`)
             if (result.error) {
                 throw('Error')
             }
@@ -63,11 +66,11 @@ export class Wallets {
                 return result
         } catch(e) {
             throw(e)
-        }          
+        }
     }
 
 
-    async send(opts: WalletSendOptions) {
+    async send(opts: SendOptions) {
          try {
              // TODO
             let result = await this.api.post(`wallets/${opts.sourceWalletId}/send`, { 
@@ -81,7 +84,7 @@ export class Wallets {
                 return result
         } catch(e) {
             throw(e)
-        }  
+        }
     }
 
 
@@ -90,10 +93,3 @@ export class Wallets {
     protected api
 }
 
-
-
-export class WalletSendOptions {
-    sourceWalletId: string
-    destinationWalletId: string
-    amount: number
-}
