@@ -1,6 +1,7 @@
 import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
 import config from '../config'
+import { PeriodicPayment } from 'models'
 
 
 
@@ -33,7 +34,7 @@ export class PeriodicPayments {
                 throw('Error')
             }
             else
-                return result
+                return PeriodicPayment.fromJSON(result)
         } catch(e) {
             throw(e)
         }

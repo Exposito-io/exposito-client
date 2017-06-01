@@ -73,9 +73,9 @@ export class Wallets {
     async send(opts: SendOptions) {
          try {
              // TODO
-            let result = await this.api.post(`wallets/${opts.sourceWalletId}/send`, { 
+            let result = await this.api.post(`wallets/${opts.sourceWalletId}/send`, {
                 destinationWalletId: opts.destinationWalletId,
-                amount: opts.amount
+                amount: opts.amount + 'bit'
             })
             if (result.error) {
                 throw('Error')
