@@ -2,7 +2,7 @@ import 'isomorphic-fetch'
 import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
 import config from '../config'
-import { SendOptions, GetWalletOptions } from 'models'
+import { SendOptions, GetWalletOptions, CreatePaymentRequest } from 'models'
 
 
 
@@ -70,13 +70,10 @@ export class Wallets {
     }
 
 
-    async send(opts: SendOptions) {
-         try {
+    async send(opts: CreatePaymentRequest) {
+        try {
              // TODO
-            let result = await this.api.post(`wallets/${opts.sourceWalletId}/send`, {
-                address: opts.destinationWalletId,
-                amount: opts.amount + 'bit'
-            })
+            let result = await this.api.post(`wallets/${opts.sourceWalletId}/send`, opts)
             if (result.error) {
                 throw('Error')
             }
