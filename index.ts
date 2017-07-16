@@ -3,6 +3,8 @@ import config from './config'
 
 import { Wallets } from './lib/wallets'
 import { PeriodicPayments } from './lib/periodic-payments'
+import { RepoStatsProvider } from './lib/repo-stats'
+import { Instances } from './lib/instances'
 
 
 
@@ -14,11 +16,13 @@ export class ExpositoClient {
 
         this.wallets = new Wallets(opts)
         this.periodicPayments = new PeriodicPayments(opts)
+        this.repoStats = new RepoStatsProvider(opts)
     }
 
 
     wallets: Wallets
     periodicPayments: PeriodicPayments
+    repoStats: RepoStatsProvider
 
 
     getVersion() { return this.version }

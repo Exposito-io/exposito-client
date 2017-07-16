@@ -7,7 +7,7 @@ import { SendOptions, GetWalletOptions, CreatePaymentRequest, RepoParams, RepoSt
 
 
 
-export class RepoStatsProvider {
+export class Instances {
 
     constructor(opts: ExpositoClientOptions = {}) {
         this.version = opts.version || config.version
@@ -29,18 +29,7 @@ export class RepoStatsProvider {
         }
     }
 
-    async getMultiple(params: RepoParams[]): Promise<RepoStats> {
-        try {
-            let result = await this.api.get(`repo-stats`, { repos: JSON.stringify(params) })
-            if (result.error) {
-                throw('Error')
-            }
-            else
-                return result
-        } catch (e) {
-            throw(e)
-        }
-    }
+
 
 
     protected version: string
