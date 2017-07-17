@@ -2,7 +2,7 @@ import 'isomorphic-fetch'
 import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
 import config from '../config'
-import { SendOptions, GetWalletOptions, CreatePaymentRequest, RepoParams, RepoStats } from 'models'
+import { SendOptions, CreateGoogleInstanceParams, Instance } from 'models'
 
 
 
@@ -16,19 +16,36 @@ export class Instances {
     }
 
 
-    async get(params: RepoParams): Promise<RepoStats> {
+    async get(id: string): Promise<Instance> {
         try {
-            let result = await this.api.get(`repo-stats`, params)
+
+            let result = await this.api.get(`instances`, { id })
             if (result.error) {
                 throw('Error')
             }
             else
                 return result
+
         } catch (e) {
             throw(e)
         }
     }
 
+
+    async create(params: CreateGoogleInstanceParams): Promise<Instance> {
+        try {
+
+            let result = await this.api.get(`instances`, params)
+            if (result.error) {
+                throw('Error')
+            }
+            else
+                return result
+
+        } catch (e) {
+            throw(e)
+        }
+    }
 
 
 

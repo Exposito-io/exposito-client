@@ -17,12 +17,14 @@ export class ExpositoClient {
         this.wallets = new Wallets(opts)
         this.periodicPayments = new PeriodicPayments(opts)
         this.repoStats = new RepoStatsProvider(opts)
+        this.instances = new Instances(opts)
     }
 
-
+    instances: Instances
     wallets: Wallets
     periodicPayments: PeriodicPayments
     repoStats: RepoStatsProvider
+
 
 
     getVersion() { return this.version }
