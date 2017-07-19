@@ -21,7 +21,7 @@
     "@types/chai": "^3.5.2",
     "@types/isomorphic-fetch": "0.0.34",
     "@types/mocha": "^2.2.41",
-    "@types/node": "^7.0.22",
+    "@types/node": "^7.0.38",
     "@types/sinon": "^2.2.2",
     "chai": "^3.5.0",
     "mocha": "^3.4.2",
