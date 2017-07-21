@@ -9,7 +9,7 @@ import { options } from './rest-options'
 export class PeriodicPayments {
 
     constructor(api) {
-        this.api = Rest(`${this.url}/${this.version}`, options)
+        this.api = api
     }
 
     /*

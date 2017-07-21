@@ -10,7 +10,7 @@ import { options } from './rest-options'
 export class RepoStatsProvider {
 
     constructor(api) {
-        this.api = Rest(`${this.url}/${this.version}`, options)
+        this.api = api
     }
 
 
