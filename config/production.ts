@@ -1,7 +1,6 @@
-import { Config } from './default'
-
-export class ProductionConfig extends Config
+export class ProductionConfig
 {
-    url = "https://api.exposito.io"
-    version = "v1"
+    url = "http://localhost:3004"
+    version = "v0"
+
 }

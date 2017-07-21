@@ -2,6 +2,7 @@ import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
 import config from '../config'
 import { PeriodicPayment } from 'models'
+import { options } from './rest-options'
 
 
 
@@ -10,7 +11,7 @@ export class PeriodicPayments {
     constructor(opts: ExpositoClientOptions = {}) {
         this.version = opts.version || config.version
         this.url = opts.url || config.url
-        this.api = Rest(`${this.url}/${this.version}`)
+        this.api = Rest(`${this.url}/${this.version}`, options)
     }
 
     /*

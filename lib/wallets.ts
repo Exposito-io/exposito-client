@@ -3,7 +3,7 @@ import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
 import config from '../config'
 import { SendOptions, GetWalletOptions, CreatePaymentRequest } from 'models'
-
+import { options } from './rest-options'
 
 
 
@@ -12,7 +12,7 @@ export class Wallets {
     constructor(opts: ExpositoClientOptions = {}) {
         this.version = opts.version || config.version
         this.url = opts.url || config.url
-        this.api = Rest(`${this.url}/${this.version}`)
+        this.api = Rest(`${this.url}/${this.version}`, options)
     }
 
 
