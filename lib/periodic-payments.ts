@@ -8,9 +8,7 @@ import { options } from './rest-options'
 
 export class PeriodicPayments {
 
-    constructor(opts: ExpositoClientOptions = {}) {
-        this.version = opts.version || config.version
-        this.url = opts.url || config.url
+    constructor(api) {
         this.api = Rest(`${this.url}/${this.version}`, options)
     }
 
@@ -41,8 +39,5 @@ export class PeriodicPayments {
         }
     }
 
-
-    protected version: string
-    protected url: string
     protected api
 }

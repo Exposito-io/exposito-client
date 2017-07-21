@@ -1,3 +1,8 @@
-export function options(defaults, url) {
-    defaults.credentials = 'include'
+export function options(token: string) {
+    return function (defaults, url) {
+        defaults.credentials = 'include'
+
+        if (token)
+            defaults.headers['Authorization'] = `Bearer ${token}`
+    }
 }

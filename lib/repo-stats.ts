@@ -9,9 +9,7 @@ import { options } from './rest-options'
 
 export class RepoStatsProvider {
 
-    constructor(opts: ExpositoClientOptions = {}) {
-        this.version = opts.version || config.version
-        this.url = opts.url || config.url
+    constructor(api) {
         this.api = Rest(`${this.url}/${this.version}`, options)
     }
 
@@ -43,8 +41,6 @@ export class RepoStatsProvider {
     }
 
 
-    protected version: string
-    protected url: string
     protected api
 }
 

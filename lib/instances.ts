@@ -10,10 +10,8 @@ import { options } from './rest-options'
 
 export class Instances {
 
-    constructor(opts: ExpositoClientOptions = {}) {
-        this.version = opts.version || config.version
-        this.url = opts.url || config.url
-        this.api = Rest(`${this.url}/${this.version}`, options)
+    constructor(api: any) {
+        this.api = api
     }
 
 
@@ -50,8 +48,6 @@ export class Instances {
 
 
 
-    protected version: string
-    protected url: string
     protected api
 }
 
