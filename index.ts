@@ -3,6 +3,7 @@ import config from './config'
 import 'isomorphic-fetch'
 import * as Rest from 'fetch-on-rest'
 import { Wallets } from './lib/wallets'
+import { Projects } from './lib/projects'
 import { PeriodicPayments } from './lib/periodic-payments'
 import { RepoStatsProvider } from './lib/repo-stats'
 import { Instances } from './lib/instances'
@@ -18,6 +19,7 @@ export class ExpositoClient {
         this.api = Rest(`${this.url}/${this.version}`, options(opts.token))
 
         this.wallets = new Wallets(this.api)
+        this.projects = new Projects(this.api)
         this.periodicPayments = new PeriodicPayments(this.api)
         this.repoStats = new RepoStatsProvider(this.api)
         this.instances = new Instances(this.api)
@@ -26,6 +28,7 @@ export class ExpositoClient {
     instances: Instances
     wallets: Wallets
     periodicPayments: PeriodicPayments
+    projects: Projects
     repoStats: RepoStatsProvider
 
 
