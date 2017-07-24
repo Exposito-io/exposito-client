@@ -10,6 +10,7 @@
         "moduleResolution": "node",
         "sourceMap": false,
         "inlineSources": false,
+        "experimentalDecorators": true,
         "baseUrl": ".",
         "lib": ["es2017", "dom"],
         "paths": {
