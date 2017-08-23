@@ -4,6 +4,7 @@ import 'isomorphic-fetch'
 import * as Rest from 'fetch-on-rest'
 import { Wallets } from './lib/wallets'
 import { Projects } from './lib/projects'
+import { Users } from './lib/users'
 import { PeriodicPayments } from './lib/periodic-payments'
 import { RepoStatsProvider } from './lib/repo-stats'
 import { Instances } from './lib/instances'
@@ -20,6 +21,7 @@ export class ExpositoClient {
 
         this.wallets = new Wallets(this.api)
         this.projects = new Projects(this.api)
+        this.users = new Users(this.api)
         this.periodicPayments = new PeriodicPayments(this.api)
         this.repoStats = new RepoStatsProvider(this.api)
         this.instances = new Instances(this.api)
@@ -30,6 +32,7 @@ export class ExpositoClient {
     periodicPayments: PeriodicPayments
     projects: Projects
     repoStats: RepoStatsProvider
+    users: Users
 
 
 
