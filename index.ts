@@ -2,6 +2,7 @@ import { ExpositoClientOptions } from './lib/exposito-client-options'
 import config from './config'
 import 'isomorphic-fetch'
 import * as Rest from 'fetch-on-rest'
+import { Github } from './lib/github'
 import { Wallets } from './lib/wallets'
 import { Projects } from './lib/projects'
 import { Users } from './lib/users'
@@ -19,6 +20,7 @@ export class ExpositoClient {
         this.url = opts.url || config.url
         this.api = Rest(`${this.url}/${this.version}`, options(opts.token))
 
+        this.github = new Github(this.api)
         this.wallets = new Wallets(this.api)
         this.projects = new Projects(this.api)
         this.users = new Users(this.api)
@@ -27,6 +29,7 @@ export class ExpositoClient {
         this.instances = new Instances(this.api)
     }
 
+    github: Github
     instances: Instances
     wallets: Wallets
     periodicPayments: PeriodicPayments
