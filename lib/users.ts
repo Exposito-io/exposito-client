@@ -13,6 +13,18 @@ export class Users {
         this.api = api
     }
 
+    async getById(id: string): Promise<User> {
+        try {
+            let result = await this.api.get(`users/${id}`)
+            if (result.error) {
+                throw('Error')
+            }
+            else
+                return User.fromJSON(result)
+        } catch (e) {
+            throw(e)
+        }        
+    }
 
     async find(query: string): Promise<Users[]> {
         try {
