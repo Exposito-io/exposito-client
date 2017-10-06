@@ -47,7 +47,7 @@ export class Wallets {
         }
     }
 
-    async getWallets() {
+    async getWallets(): Promise<Wallet[]> {
          try {
             let result = await this.api.get(`wallets`)
             if (result.error) {
