@@ -23,7 +23,7 @@ export class Users {
                 return User.fromJSON(result)
         } catch (e) {
             throw(e)
-        }        
+        }
     }
 
     async find(query: string): Promise<Users[]> {
