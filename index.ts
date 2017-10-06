@@ -8,6 +8,7 @@ import { Projects } from './lib/projects'
 import { Users } from './lib/users'
 import { PeriodicPayments } from './lib/periodic-payments'
 import { RepoStatsProvider } from './lib/repo-stats'
+import { Transactions } from './lib/transactions'
 import { Instances } from './lib/instances'
 import { options } from './lib/rest-options'
 
@@ -27,6 +28,7 @@ export class ExpositoClient {
         this.periodicPayments = new PeriodicPayments(this.api)
         this.repoStats = new RepoStatsProvider(this.api)
         this.instances = new Instances(this.api)
+        this.transactions = new Transactions(this.api)
     }
 
     github: Github
@@ -35,6 +37,7 @@ export class ExpositoClient {
     periodicPayments: PeriodicPayments
     projects: Projects
     repoStats: RepoStatsProvider
+    transactions: Transactions
     users: Users
 
 
