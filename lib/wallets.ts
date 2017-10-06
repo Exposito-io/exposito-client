@@ -54,7 +54,7 @@ export class Wallets {
                 throw('Error')
             }
             else
-                return result
+                return result.wallets
         } catch(e) {
             throw(e)
         }
