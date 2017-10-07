@@ -41,7 +41,7 @@ export class Transactions {
 
     async getTransactionsForWallet(id: string): Promise<Transaction[]> {
          try {
-            let result = await this.api.get(`transactions/wallet?=${id}`)
+            let result = await this.api.get(`transactions`, { wallet: id})
             if (result.error) {
                 throw('Error')
             }
