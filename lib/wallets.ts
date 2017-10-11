@@ -21,7 +21,7 @@ export class Wallets {
     }
 
 
-    async createWallet(walletOptions: ExpositoWalletOptions): Promise<string> {
+    async createWallet(walletOptions: ExpositoWalletOptions): Promise<Wallet> {
         try {
             let result = await this.api.post(`wallets`, walletOptions)
             if (result.error) {
