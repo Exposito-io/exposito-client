@@ -39,5 +39,18 @@ export class PeriodicPayments {
         }
     }
 
+    async getPeriodicPaymentsForWallet(walletId: string): Promise<PeriodicPayment[]> {
+        try {
+           let result = await this.api.get(`periodic-payments/byWallet/${walletId}`)
+           if (result.error) {
+               throw('Error')
+           }
+           else
+               return result.map(PeriodicPayment.fromJSON)
+       } catch(e) {
+           throw(e)
+       }
+   }    
+
     protected api
 }
