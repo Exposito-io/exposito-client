@@ -43,7 +43,7 @@ export class ExpositoClient {
     transactions: Transactions
     users: Users
 
-    search(query: string) {
+    async search(query: string) {
         return this.searchApi.search(query)
     }
 
