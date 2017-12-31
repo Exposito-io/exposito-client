@@ -13,14 +13,14 @@ export class PeriodicPayments {
     }
 
     
-    async createPeriodicTransfer(periodicTransfer: PeriodicPaymentOptions): Promise<string> {
+    async createPeriodicTransfer(periodicTransfer: PeriodicPaymentOptions): Promise<PeriodicPayment> {
         try {
             let result = await this.api.post(`periodic-payments`, periodicTransfer)
             if (result.error) {
                 throw('Error')
             }
             else
-                return result
+                return PeriodicPayment.fromJSON(result)
         } catch(e) {
             throw(e)
         }
