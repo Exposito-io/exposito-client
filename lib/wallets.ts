@@ -34,7 +34,7 @@ export class Wallets {
         }
     }
 
-    async getWallet(opts: GetWalletOptions) {
+    async getWallet(opts: GetWalletOptions): Promise<Wallet> {
          try {
             let result = await this.api.get(`wallets/${opts.walletId}`)
             if (result.error) {

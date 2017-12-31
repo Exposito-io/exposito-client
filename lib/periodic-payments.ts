@@ -1,7 +1,7 @@
 import { ExpositoClientOptions } from './exposito-client-options'
 import * as Rest from 'fetch-on-rest'
 import config from '../config'
-import { PeriodicPayment } from 'models'
+import { PeriodicPayment, PeriodicPaymentOptions } from 'models'
 import { options } from './rest-options'
 
 
@@ -12,10 +12,10 @@ export class PeriodicPayments {
         this.api = api
     }
 
-    /*
-    async createPeriodicPayment(): Promise<string> {
+    
+    async createPeriodicTransfer(periodicTransfer: PeriodicPaymentOptions): Promise<string> {
         try {
-            let result = await this.api.post(`wallets`)
+            let result = await this.api.post(`periodic-payments`, periodicTransfer)
             if (result.error) {
                 throw('Error')
             }
@@ -24,7 +24,7 @@ export class PeriodicPayments {
         } catch(e) {
             throw(e)
         }
-    }*/
+    }
 
     async getPeriodicPayment(id: string) {
          try {
